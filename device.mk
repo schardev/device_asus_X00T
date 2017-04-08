@@ -277,8 +277,7 @@ PRODUCT_PACKAGES += \
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes \
-    libebtc
+    ethertypes
 
 # IRQ
 PRODUCT_COPY_FILES += \
