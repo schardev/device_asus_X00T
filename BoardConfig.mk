@@ -226,4 +226,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # inherit from the proprietary version
--include vendor/asus/X00T/BoardConfigVendor.mk
+include vendor/asus/X00T/BoardConfigVendor.mk
