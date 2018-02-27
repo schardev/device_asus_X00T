@@ -177,7 +177,7 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_X00T
