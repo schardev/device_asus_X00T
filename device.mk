@@ -140,6 +140,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     libbthost_if \
+    libbluetooth_qti \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl
 

@@ -87,6 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.library_name=libbluetooth_qti.so \
     vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
