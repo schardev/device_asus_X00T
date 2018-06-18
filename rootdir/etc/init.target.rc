@@ -207,12 +207,6 @@ service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     group radio wifi inet log diag
     disabled
 
-service energy-awareness /vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
-
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
 
