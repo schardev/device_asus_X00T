@@ -402,7 +402,6 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0 \
     rild \
     librmnetctl \
-    libxml2 \
     libprotobuf-cpp-full
 
 # Soong
@@ -443,9 +442,7 @@ PRODUCT_BOOT_JARS += \
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
+    IPACM_cfg.xml
 
 # Thermal
 PRODUCT_PACKAGES += \
