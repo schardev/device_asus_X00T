@@ -10,6 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.ras.enabled=false \
+    persist.audio.fluence.voicecomm=true \
     ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_default=9 \
     ro.config.media_vol_steps=25 \
@@ -35,7 +36,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio_hal.period_size=192 \
-    vendor.voice.path.for.pcm.voip=false
+    vendor.voice.path.for.pcm.voip=false \
+    vendor.audio.volume.headset.gain.depcal=true
+
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
