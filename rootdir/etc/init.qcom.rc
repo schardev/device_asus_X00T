@@ -925,6 +925,7 @@ on property:sys.boot_completed=1
     start qcom-post-boot
     start qti-testscripts
     start fix_baseband
+    setprop vendor.post_boot.parsed 1
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
