@@ -494,6 +494,7 @@ PRODUCT_PACKAGES += \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf \
+    wpa_cli \
     wifi-mac-generator
 
 PRODUCT_COPY_FILES += \
