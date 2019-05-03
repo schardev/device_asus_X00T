@@ -203,6 +203,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.disable_skip_validate=1 \
     vendor.display.disable_skip_validate=1
 
+# SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.protected_contents=true
+
 # System prop for UBWC
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.video.disable.ubwc=1
