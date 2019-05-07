@@ -369,6 +369,7 @@ PRODUCT_PACKAGES += \
     init.qti.ims.sh \
     move_time_data.sh \
     move_wifi_data.sh \
+    fix_baseband.sh \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
