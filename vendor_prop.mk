@@ -237,7 +237,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=20,20 \
     telephony.lteOnCdmaDevice=1 \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
-    persist.vendor.radio.procedure_bytes=SKIP
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.radio.calls.on.ims=1
+
+
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -293,3 +299,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.enable_vds=1 \
     persist.sys.wfd.virtual=0
 
+# IMS
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.dbg.ims_volte_enable=1 \
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1
