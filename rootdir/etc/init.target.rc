@@ -190,11 +190,6 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service time_daemon /vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
-
 service adsprpcd /vendor/bin/adsprpcd audiopd
    class main
    user media
