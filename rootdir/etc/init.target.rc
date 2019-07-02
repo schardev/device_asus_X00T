@@ -118,6 +118,10 @@ on boot
     chown radio radio sys/module/stk3x1x/parameters/call_status_flag
     #add for als/ps permission by wildbook at 2019/09/03 end
 
+    # Battery charging
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+
 #Load WLAN driver
    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
