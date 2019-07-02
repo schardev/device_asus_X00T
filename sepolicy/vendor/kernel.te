@@ -11,3 +11,6 @@ allow kernel init:process noatsecure;
 allow kernel vfat:file open;
 allow kernel vfat:dir { search };
 allow kernel kernel:system { module_request };
+allow kernel kcal_dev:dir relabelto;
+allow kernel kcal_dev:file relabelto;
+allow kernel kcal_dev:lnk_file relabelto;
