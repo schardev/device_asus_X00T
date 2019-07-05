@@ -87,6 +87,10 @@ on boot
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
 
+    # Backlight dimmer
+    chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
+    chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer
+
     # KCAL permissions
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
