@@ -184,7 +184,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.ecclist=112,911 \
     ro.telephony.default_network=20,20 \
     telephony.lteOnCdmaDevice=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.vendor.radio.procedure_bytes=SKIP
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
