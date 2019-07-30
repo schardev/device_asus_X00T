@@ -856,7 +856,8 @@ service profiler_daemon /system/bin/profiler_daemon
 
 service charger /charger
     class charger
-    group system graphics
+    user system
+    group system graphics input
     seclabel u:r:charger:s0
 
 service charger_monitor /system/bin/charger_monitor
