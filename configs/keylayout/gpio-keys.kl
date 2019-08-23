@@ -30,7 +30,3 @@ key 114   VOLUME_DOWN
 key 102   HOME
 key 528   FOCUS
 key 766   CAMERA
-# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 start
-key 746   SAR_SENSOR_IN
-key 747   SAR_SENSOR_OUT
-# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 end
