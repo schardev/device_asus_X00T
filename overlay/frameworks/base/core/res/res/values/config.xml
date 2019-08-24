@@ -550,6 +550,12 @@
          provisioning, availability etc -->
     <bool name="config_carrier_vt_available">true</bool>
     
+	
+    <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
+          For this time after the screen turns on, the Power Manager
+          will not debounce light sensor readings -->
+    <integer name="config_lightSensorWarmupTime">200</integer>
+
     <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
          true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
     <bool name="config_useSystemClockforRotationSensor">true</bool>
