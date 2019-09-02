@@ -9,3 +9,7 @@ type sysfs_usb_rndis, sysfs_type, fs_type;
 # Gesture
 type sysfs_dclicknode, sysfs_type, fs_type;
 type sysfs_gesture_node, sysfs_type, fs_type;
+
+# fix_baseband
+type fix_baseband, domain;
+type fix_baseband_exec, exec_type, vendor_file_type, file_type;
