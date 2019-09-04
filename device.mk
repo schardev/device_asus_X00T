@@ -396,6 +396,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     qcrilhook
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
