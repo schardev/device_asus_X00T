@@ -8,6 +8,10 @@
 # NFC
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.nxpnfc@1\.0-service         u:object_r:nxpnfc_hal_svc_exec:s0
 
+# Firmware
+/firmware(/.*)?                                                                     u:object_r:firmware_file:s0
+/bt_firmware(/.*)?                                                                  u:object_r:bt_firmware_file:s0
+
 # Fingerprint
 /dev/fpsdev0                                                            u:object_r:cdfinger_device:s0
 /dev/goodix_fp                                                          u:object_r:fingerprintd_device:s0
