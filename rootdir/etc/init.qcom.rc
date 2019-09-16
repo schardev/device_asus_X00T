@@ -1185,3 +1185,6 @@ service vendor.wifilearner /vendor/bin/wifilearner
     user wifi
     group wifi
     oneshot
+
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
