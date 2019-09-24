@@ -169,6 +169,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-aac=true \
     media.stagefright.enable-qcp=true \
     media.stagefright.enable-scan=true \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     mm.enable.smoothstreaming=true \
     vendor.mm.enable.qcom_parser=13631487 \
     mmp.enable.3g2=true \
