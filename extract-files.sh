@@ -62,8 +62,20 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    lib64/libwfdnative.so)
+        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        ;;
+
+    lib64/libfm-hci.so)
+        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        ;;
+
     product/lib64/libdpmframework.so)
         patchelf --add-needed "libshim_dpmframework.so" "${2}"
+        ;;
+
+    vendor/lib/hw/camera.sdm660.so)
+        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
     vendor/lib64/libril-qc-hal-qmi.so)
