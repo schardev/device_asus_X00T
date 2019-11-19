@@ -193,11 +193,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
     persist.vendor.data.mode=concurrent
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.nfc_nci=pn8x \
-    ro.nfc.port=I2C
-
 # QCOM cabl
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.cabl=2
