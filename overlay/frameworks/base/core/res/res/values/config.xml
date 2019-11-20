@@ -575,4 +575,7 @@
     <!-- Set default animations to half -->
     <item name="config_appTransitionAnimationDurationScaleDefault" format="float" type="dimen">0.5</item>
 	
+    <!-- Flashlight on power button -->
+    <integer name="config_flashlightProximityTimeout">-1</integer>
+
 </resources>
