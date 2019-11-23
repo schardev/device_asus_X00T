@@ -984,6 +984,14 @@ service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.andro
     oneshot
     keycodes 114 115 116
 
+service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+    override
+    class hal
+    user system
+    group system wakelock input uhid
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10
+
 #Set GPU Opengles version
 on property:vendor.opengles.version=*
     setprop ro.opengles.version ${vendor.opengles.version}
