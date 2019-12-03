@@ -22,6 +22,12 @@
         android:key="set_on_boot"
         android:title="@string/set_on_boot" />
 
+    <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+        android:defaultValue="false"
+        android:dependency="kcal_enabled"
+        android:key="grayscale"
+        android:title="@string/grayscale" />
+
     <PreferenceCategory
         android:key="cat_colormanagement"
         android:title="@string/cat_colormanagement">
@@ -87,12 +93,6 @@
             android:key="hue"
             android:max="1536"
             android:title="@string/hue" />
-
-        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:dependency="kcal_enabled"
-            android:key="grayscale"
-            android:title="@string/grayscale" />
 
     </PreferenceCategory>
 </PreferenceScreen>
