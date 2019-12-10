@@ -9,3 +9,6 @@ allow hal_camera_default self:socket { read write };
 set_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, vendor_system_prop)
 binder_call(hal_camera_default, hal_graphics_allocator_default)
+
+# Allow hal_camera_default to search in mnt/vendor
+allow hal_camera_default mnt_vendor_file:dir search;
