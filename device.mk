@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
 
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.3 \
+    vendor.display.config@1.9 \
     copybit.sdm660 \
     gralloc.sdm660 \
     hwcomposer.sdm660 \
