@@ -70,12 +70,10 @@ on post-fs-data
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
-    mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
 
 on boot
     start vendor.rmt_storage
-    start vendor.rfs_access
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/audio-app/cpus 1-2
     write /dev/cpuset/foreground/cpus 0-7
@@ -181,18 +179,6 @@ service adsprpcd /vendor/bin/adsprpcd audiopd
    user media
    group media
 
-service hbtp /vendor/bin/hbtp_daemon
-    class main
-    user system
-    group system
-    disabled
-
-service vendor.cdsprpcd /vendor/bin/cdsprpcd
-   class main
-   user system
-   group system
-   disabled
-
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user radio
@@ -297,4 +283,4 @@ on property:sys.boot_completed=1
 # Huaqin add for ZQL1820-84 by liunianliang at 2018/07/16 end
 
 # default country code
-setprop ro.boot.wificountrycode 00
+  setprop ro.boot.wificountrycode 00
