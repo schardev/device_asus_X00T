@@ -133,6 +133,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.coresight.config=stm-events
 
+# FM
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.hw.fm.init=0
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
