@@ -571,4 +571,8 @@
 
     <!-- True if the firmware supports connected MAC randomization -->
     <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+    
+    <!-- Set default animations to half -->
+    <item name="config_appTransitionAnimationDurationScaleDefault" format="float" type="dimen">0.5</item>
+	
 </resources>
