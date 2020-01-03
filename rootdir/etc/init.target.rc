@@ -75,7 +75,6 @@ on post-fs-data
 on boot
     start vendor.rmt_storage
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/audio-app/cpus 1-2
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
@@ -140,6 +139,14 @@ on boot
     setprop vendor.usb.dpl.inst.name "dpl"
     write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
     setprop sys.usb.configfs 1
+
+on property:sys.boot_completed=1    
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3 
 
 #Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
