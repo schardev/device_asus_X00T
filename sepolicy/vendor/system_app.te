@@ -19,3 +19,7 @@ allow system_app sysfs:file { getattr };
 allow system_app selinuxfs:file r_file_perms;
 allow system_app baseband_prop:file { read };
 allow system_app system_data_file:file { open };
+
+# Allow theme_prop to be read and set by Settings
+get_prop(system_app, theme_prop)
+set_prop(system_app, theme_prop)

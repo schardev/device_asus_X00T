@@ -8,3 +8,6 @@ allow priv_app system_data_file:file { open };
 allow priv_app sysfs_kgsl:lnk_file read;
 allow priv_app baseband_prop:file read;
 get_prop(priv_app, baseband_prop)
+
+# Allow Settings to read theme_prop
+get_prop(priv_app, theme_prop)
