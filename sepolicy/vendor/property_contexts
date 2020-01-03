@@ -16,3 +16,7 @@ sys.nvram.wifimac                  u:object_r:nvram_btwifi_prop:s0
 
 # MPCTL
 sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
+
+# Accent Picker
+persist.sys.theme.accentcolor                  u:object_r:theme_prop:s0
+persist.sys.theme.gradientcolor                   u:object_r:theme_prop:s0
