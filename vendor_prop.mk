@@ -101,7 +101,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.preview.ubwc=0 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snap \
+    vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
 
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
