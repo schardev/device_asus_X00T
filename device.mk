@@ -196,6 +196,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
+    qcom.fmradio.xml \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += \
     qcom.fmradio
 
 PRODUCT_PACKAGES += \
