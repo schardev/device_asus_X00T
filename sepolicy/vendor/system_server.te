@@ -5,7 +5,7 @@ allow system_server vendor_cfg_prop:file { getattr read open };
 # Vibrator
 allow system_server sysfs_vibrator:file read;
 
-# Allow system_server to set persist_camera_prop
-get_prop(system_server, persist_camera_prop)
+# Allow system_server to set vendor_persist_camera_prop
+get_prop(system_server, vendor_persist_camera_prop)
 
 get_prop(system_server, baseband_prop)
