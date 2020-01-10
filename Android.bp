@@ -17,4 +17,5 @@ soong_namespace {
 
 subdirs = [
     "light",
+    "biometrics",
 ]
