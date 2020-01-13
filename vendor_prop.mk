@@ -228,6 +228,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.ecclist=112,911 \
     ro.telephony.default_network=20,20 \
     ro.telephony.iwlan_operation_mode=legacy \
+    ro.telephony.use_old_mnc_mcc_format=true \
     telephony.lteOnCdmaDevice=1 \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.procedure_bytes=SKIP \
