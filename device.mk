@@ -21,6 +21,20 @@
 # definition file).
 #
 
+# Prebuilts & Stuff
+PRODUCT_PACKAGES += \
+    LawnConf \
+    Lawnfeed \
+    Lawnchair
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/Lawnchair/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/privapp-permissions-lawnchair.xml \
+    $(LOCAL_PATH)/prebuilts/Lawnchair/permissions/lawnchair-hiddenapi-package-whitelist.xml::$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.vendor.overlay.theme=com.havoc.overlay.lawnconf
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

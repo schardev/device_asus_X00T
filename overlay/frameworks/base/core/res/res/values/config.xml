@@ -626,4 +626,7 @@
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 
+    <!-- Lawnstep -->
+    <string name="config_recentsComponentName" translatable="false">ch.deletescape.lawnchair.ci/com.android.quickstep.RecentsActivity</string>
+
 </resources>
