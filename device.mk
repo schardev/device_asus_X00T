@@ -148,7 +148,7 @@ PRODUCT_PACKAGES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service
+    android.hardware.configstore@1.1-service
 
 # Codec2 modules
 PRODUCT_PACKAGES += \
