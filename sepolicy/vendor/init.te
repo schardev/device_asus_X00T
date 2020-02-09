@@ -1,2 +1,3 @@
 allow init firmware_file:filesystem getattr;
 allow init bt_firmware_file:filesystem getattr;
+allow init sysfs_battery_supply:file { open write };
