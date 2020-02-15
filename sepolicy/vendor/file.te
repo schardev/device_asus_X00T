@@ -18,5 +18,9 @@ type fix_baseband_exec, exec_type, vendor_file_type, file_type;
 # proc
 type proc_swappiness, proc_type, fs_type;
 
-# kcal
+# ZenParts
 type kcal_dev, sysfs_type, fs_type;
+type sysfs_backlight, sysfs_type, fs_type;
+type sysfs_hgain, sysfs_type, fs_type;
+type sysfs_mgain, sysfs_type, fs_type;
+type sysfs_tbrightness, sysfs_type, fs_type;

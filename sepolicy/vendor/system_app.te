@@ -27,3 +27,7 @@ allow system_app sysfs_touchpanel:dir search;
 allow system_app sysfs_dclicknode:file { getattr read write open };
 allow system_app sysfs_gesture_node:file { getattr read write open };
 allow system_app sysfs_leds:dir search;
+allow system_app sysfs_backlight:file { open read getattr write };
+allow system_app sysfs_hgain:file { open read getattr write };
+allow system_app sysfs_mgain:file { open read getattr write };
+allow system_app sysfs_tbrightness:file { open getattr write };
