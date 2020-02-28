@@ -46,4 +46,7 @@ customized
          show none. -->
     <integer name="config_smart_replies_in_notifications_min_num_system_generated_replies">1</integer>
 
+    <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
+
 </resources>
