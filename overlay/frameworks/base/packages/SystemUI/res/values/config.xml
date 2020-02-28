@@ -38,4 +38,7 @@ customized
     <integer name="config_maxVisibleNotificationIcons">9</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">9</integer>
 
+    <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
+
 </resources>
