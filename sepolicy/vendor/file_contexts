@@ -33,7 +33,8 @@
 /sys/kernel/touchpanel/gesture_node                                           u:object_r:sysfs:s0
 
 # DRM
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service.widevine    u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.[0-2]-service\.clearkey				u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.[0-2]-service\.widevine				u:object_r:hal_drm_widevine_exec:s0
 
 # Fix Baseband
 /(vendor|system/vendor)/bin/fix_baseband.sh                                       u:object_r:fix_baseband_exec:s0

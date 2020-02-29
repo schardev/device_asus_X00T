@@ -18,4 +18,4 @@ type fix_baseband_exec, exec_type, vendor_file_type, file_type;
 type proc_swappiness, proc_type, fs_type;
 
 # kcal
-type kcal_dev, sysfs_type, file_type;
+type kcal_dev, sysfs_type, fs_type;
