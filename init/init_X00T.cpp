@@ -85,6 +85,7 @@ void dalvik_properties()
         property_set("dalvik.vm.heaptargetutilization", "0.5");
         property_set("dalvik.vm.heapmaxfree", "32m");
         property_set("dalvik.vm.heapminfree", "8m");
+        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "48");
     } else if (sys.totalram > 3072ull * 1024 * 1024) {
         // Set for 4GB RAM
         property_set("dalvik.vm.heapstartsize", "8m");
@@ -93,6 +94,7 @@ void dalvik_properties()
         property_set("dalvik.vm.heaptargetutilization", "0.6");
         property_set("dalvik.vm.heapmaxfree", "16m");
         property_set("dalvik.vm.heapminfree", "8m");
+        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "36");
     } else {
         // Set for 2/3GB RAM
         property_set("dalvik.vm.heapstartsize", "8m");
@@ -101,6 +103,7 @@ void dalvik_properties()
         property_set("dalvik.vm.heaptargetutilization", "0.75");
         property_set("dalvik.vm.heapmaxfree", "8m");
         property_set("dalvik.vm.heapminfree", "512k");
+        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "24");
   }
 }
 
