@@ -213,7 +213,6 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on property:sys.boot_completed=1
-    setprop sys.io.scheduler "bfq"
     swapon_all /vendor/etc/fstab.qcom
 
 on charger
