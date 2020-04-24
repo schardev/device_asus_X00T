@@ -550,6 +550,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wcnss_service \
     wificond \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
     wpa_cli \
