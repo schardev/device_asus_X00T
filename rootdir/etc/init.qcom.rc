@@ -163,12 +163,6 @@ on boot
     setprop wifi.interface wlan0
     setprop ro.telephony.call_ring.multiple false
 
-    # Huaqin add for 1261108 by huqian at 2018/11/29 start
-    # Huaqin add for ZQL1820P1-27 by huqian at 2018/11/12 start
-    setprop persist.vendor.camera.gyro.disable 0
-    # Huaqin add for ZQL1820P1-27 by huqian at 2018/11/12 end
-    # Huaqin add for 1261108 by huqian at 2018/11/29 end
-
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
