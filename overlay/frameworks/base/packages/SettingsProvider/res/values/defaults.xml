@@ -19,7 +19,7 @@
 <resources>
 
     <!-- Set the automatic brightness mode on by default -->
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <bool name="def_screen_brightness_automatic_mode">false</bool>
     
     <!-- Set default animation to half -->	
     <fraction name="def_window_animation_scale">50%</fraction>
