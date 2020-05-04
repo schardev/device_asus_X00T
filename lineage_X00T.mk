@@ -29,17 +29,17 @@ PRODUCT_BRAND := asus
 PRODUCT_DEVICE := X00T
 PRODUCT_MANUFACTURER := asus
 PRODUCT_NAME := lineage_X00T
-
+PRODUCT_MODEL := Zenfone Max Pro M1
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
 TARGET_VENDOR := asus
 TARGET_VENDOR_PRODUCT_NAME := X00T
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="sdm660_64-user 9 PKQ1 1016 release-keys"
+    PRIVATE_BUILD_DESC="crosshatch-user 10 QQ2A.200405.005 6254899 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Android/sdm660_64/sdm660_64:9/PKQ1/16.2017.1903.050-20190401:user/release-keys
+BUILD_FINGERPRINT := google/crosshatch/crosshatch:10/QQ2A.200405.005/6254899:user/release-keys
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
