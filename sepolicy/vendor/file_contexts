@@ -41,6 +41,7 @@
 
 # Thermal
 /sys/devices/soc/780000.qcom,msm-core/uio/uio1(/.*)?                    u:object_r:sysfs_uio_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.mock            u:object_r:hal_thermal_default_exec:s0
 
 # Kcal
 /sys/devices/platform/kcal_ctrl\.0(/.*)?                                 u:object_r:kcal_dev:s0
