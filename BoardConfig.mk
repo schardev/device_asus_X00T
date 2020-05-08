@@ -200,6 +200,9 @@ include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
+# Treble
+BOARD_VNDK_VERSION := current
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
