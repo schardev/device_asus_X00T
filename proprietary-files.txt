@@ -115,11 +115,10 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # Camera
 vendor/lib/hw/camera.sdm660.so
-vendor/lib/libarcsoft_arc3dnr_intf.so
-vendor/lib/libarcsoft_arcshdr_intf.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
 vendor/lib/libarcsoft_hdr.so
+vendor/lib/libarcsoft_hdr_detection.so
 vendor/lib/libarcsoft_night_shot.so
 vendor/lib/libarcsoft_picselfie_algorithm.so
 vendor/lib/libcdsprpc.so
@@ -250,6 +249,7 @@ vendor/lib/libmmcamera_qtech_f3l8yam_eeprom.so
 vendor/lib/libmmcamera_qtech_f5670bq_eeprom.so
 vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_rohm_brcg064gwz_3_eeprom.so
+vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sunny_8865_eeprom.so
 vendor/lib/libmmcamera_sunny_ov13855_eeprom.so
 vendor/lib/libmmcamera_sunny_q13v06k_eeprom.so
@@ -274,8 +274,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libremosaic_daemon.so
-vendor/lib/libts_detected_face_hal.so
-vendor/lib/libts_face_beautify_hal.so
+vendor/lib/libseemore.so
 vendor/lib/libvideoutils.so
 
 # Camera configs
@@ -374,6 +373,9 @@ vendor/lib/libchromatix_hi1333_ofilm_13m_default_preview_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_default_video.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_default_video_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_eis_video_bu64297.so
+vendor/lib/libchromatix_hi1333_ofilm_13m_hdr.so
+vendor/lib/libchromatix_hi1333_ofilm_13m_hdr_cpp.so
+vendor/lib/libchromatix_hi1333_ofilm_13m_hdr_video_3a.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_60.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_60_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_90.so
@@ -550,6 +552,9 @@ vendor/lib/libchromatix_ov13855_holitech_13m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_default_video.so
 vendor/lib/libchromatix_ov13855_holitech_13m_default_video_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_eis_video_bu64297.so
+vendor/lib/libchromatix_ov13855_holitech_13m_hdr.so
+vendor/lib/libchromatix_ov13855_holitech_13m_hdr_3a.so
+vendor/lib/libchromatix_ov13855_holitech_13m_hdr_cpp.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_60.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_90.so
@@ -610,6 +615,9 @@ vendor/lib/libchromatix_ov16885_holitech_16m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_default_video.so
 vendor/lib/libchromatix_ov16885_holitech_16m_default_video_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_eis_video_bu64297.so
+vendor/lib/libchromatix_ov16885_holitech_16m_hdr.so
+vendor/lib/libchromatix_ov16885_holitech_16m_hdr_3a.so
+vendor/lib/libchromatix_ov16885_holitech_16m_hdr_cpp.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_60.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_90.so
@@ -637,6 +645,9 @@ vendor/lib/libchromatix_ov16885_ofilm_16m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_default_video.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_default_video_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_eis_video_bu64297.so
+vendor/lib/libchromatix_ov16885_ofilm_16m_hdr.so
+vendor/lib/libchromatix_ov16885_ofilm_16m_hdr_3a.so
+vendor/lib/libchromatix_ov16885_ofilm_16m_hdr_cpp.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_60.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_90.so
@@ -653,7 +664,6 @@ vendor/lib/libchromatix_ov8856_a3_default_preview.so
 vendor/lib/libchromatix_ov8856_a3_default_video.so
 vendor/lib/libchromatix_ov8856_a3_hfr_60.so
 vendor/lib/libchromatix_ov8856_a3_hfr_90.so
-vendor/lib/libchromatix_ov8856_a3_hfr_120.so
 vendor/lib/libchromatix_ov8856_chicony_front_a3_default_preview.so
 vendor/lib/libchromatix_ov8856_chicony_front_a3_default_video.so
 vendor/lib/libchromatix_ov8856_chicony_front_a3_hfr_60.so
@@ -684,7 +694,6 @@ vendor/lib/libchromatix_ov8856_common.so
 vendor/lib/libchromatix_ov8856_cpp_ds_chromatix.so
 vendor/lib/libchromatix_ov8856_cpp_hfr_60.so
 vendor/lib/libchromatix_ov8856_cpp_hfr_90.so
-vendor/lib/libchromatix_ov8856_cpp_hfr_120.so
 vendor/lib/libchromatix_ov8856_cpp_liveshot.so
 vendor/lib/libchromatix_ov8856_cpp_preview.so
 vendor/lib/libchromatix_ov8856_cpp_snapshot.so
@@ -693,7 +702,6 @@ vendor/lib/libchromatix_ov8856_cpp_video.so
 vendor/lib/libchromatix_ov8856_default_video.so
 vendor/lib/libchromatix_ov8856_hfr_60.so
 vendor/lib/libchromatix_ov8856_hfr_90.so
-vendor/lib/libchromatix_ov8856_hfr_120.so
 vendor/lib/libchromatix_ov8856_liveshot.so
 vendor/lib/libchromatix_ov8856_postproc.so
 vendor/lib/libchromatix_ov8856_preview.so
