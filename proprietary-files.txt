@@ -1107,7 +1107,6 @@ vendor/lib/libFlacSwDec.so
 -vendor/lib/libgpustats.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal_proprietary.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -1133,22 +1132,25 @@ lib64/libmmi.so:vendor/lib64/libmmi.so
 
 # Perf
 vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/libperfconfig.so
+vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
+vendor/lib/vendor.qti.hardware.perf@2.0.so
+vendor/lib64/libperfconfig.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.0.so
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -1347,26 +1349,29 @@ vendor/bin/sensors.qti
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.sdm660.so
 vendor/lib/hw/sensors.sdm660_64.so
-vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
+vendor/lib/libssc_default_listener.so
 vendor/lib/sensors.native.so
 vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.sdm660.so
 vendor/lib64/hw/sensors.sdm660_64.so
-vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
+vendor/lib64/libsensorndkbridge.so
+vendor/lib64/libsensor_reg.so
+vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.native.so
 vendor/lib64/sensors.ssc.so
 
 # Sensors calibration
-framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/etc/calmodule.cfg
 vendor/lib/libcalmodule_common.so
 vendor/lib/sensor_calibrate.so
-vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/libcalmodule_common.so
 vendor/lib64/sensor_calibrate.so
-vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Signed graphics firmware
 vendor/firmware/cppf.b00
@@ -1418,20 +1423,15 @@ vendor/firmware/widevine.mdt
 # Wi-Fi
 vendor/bin/cnss-daemon
 
-# Wi-Fi Display
+# WiFi Display
 bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
 -framework/WfdCommon.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-lib/extractors/libmmparser.so
-lib/libFileMux.so
-lib/libmmparser_lite.so
-lib/libmmosal.so
 lib/libmmrtpdecoder.so
 lib/libmmrtpencoder.so
-lib/libOmxMux.so
 lib/libwfdavenhancements.so
 lib/libwfdclient.so
 lib/libwfdcodecv4l2.so
@@ -1449,10 +1449,6 @@ lib/libwfduibcsink.so
 lib/libwfduibcsinkinterface.so
 lib/libwfduibcsrc.so
 lib/libwfduibcsrcinterface.so
-lib64/extractors/libmmparser.so
-lib64/libFileMux.so
-lib64/libmmosal.so
-lib64/libmmparser_lite.so
 lib64/libwfdclient.so
 lib64/libwfdnative.so
 lib64/libwfds.so
@@ -1469,3 +1465,4 @@ vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
+
