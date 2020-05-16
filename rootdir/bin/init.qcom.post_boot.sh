@@ -1,6 +1,6 @@
 #! /vendor/bin/sh
 
-# Copyright (c) 2012-2013, 2016-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2013, 2016-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -231,7 +231,9 @@ function configure_zram_parameters() {
     # Zram disk - 75% for Go devices.
     # For 512MB Go device, size = 384MB, set same for Non-Go.
     # For 1GB Go device, size = 768MB, set same for Non-Go.
-    # For >=2GB Non-Go device, size = 1GB
+    # For >1GB and <=3GB Non-Go device, size = 1GB
+    # For >3GB and <=4GB Non-Go device, size = 2GB
+    # For >4GB Non-Go device, size = 4GB
     # And enable lz4 zram compression for Go targets.
 
     if [ "$low_ram" == "true" ]; then
@@ -239,13 +241,19 @@ function configure_zram_parameters() {
     fi
 
     if [ -f /sys/block/zram0/disksize ]; then
+        if [ -f /sys/block/zram0/use_dedup ]; then
+            echo 1 > /sys/block/zram0/use_dedup
+        fi
         if [ $MemTotal -le 524288 ]; then
             echo 402653184 > /sys/block/zram0/disksize
         elif [ $MemTotal -le 1048576 ]; then
             echo 805306368 > /sys/block/zram0/disksize
-        else
-            # Set Zram disk size=1GB for >=2GB Non-Go targets.
+        elif [ $MemTotal -le 3145728 ]; then
             echo 1073741824 > /sys/block/zram0/disksize
+        elif [ $MemTotal -le 4194304 ]; then
+            echo 2147483648 > /sys/block/zram0/disksize
+        else
+            echo 4294967296 > /sys/block/zram0/disksize
         fi
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
@@ -265,6 +273,7 @@ function configure_read_ahead_kb_values() {
         echo 128 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
         echo 128 > /sys/block/dm-0/queue/read_ahead_kb
         echo 128 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 128 > /sys/block/dm-2/queue/read_ahead_kb
     else
         echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
         echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
@@ -272,6 +281,7 @@ function configure_read_ahead_kb_values() {
         echo 512 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
         echo 512 > /sys/block/dm-0/queue/read_ahead_kb
         echo 512 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 512 > /sys/block/dm-2/queue/read_ahead_kb
     fi
 }
 
@@ -372,11 +382,6 @@ else
 
             vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
             echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-			if [ $MemTotal -gt 2097152 ]; then
-		    # Huaqin add for ZQL1820-699 by shengzhong at 2018/09/19 start
-		    echo "48432,63040,70648,95256,130296,145640" > /sys/module/lowmemorykiller/parameters/minfree
-		    # Huaqin add for ZQL1820-699 by shengzhong at 2018/09/19 end
-			fi
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
             # Disable Core Control, enable KLMK for non-go 8909.
@@ -437,6 +442,10 @@ else
     else
         echo 10 > /proc/sys/vm/swappiness
     fi
+
+    # Disable wsf for all targets beacause we are using efk.
+    # wsf Range : 1..1000 So set to bare minimum value 1.
+    echo 1 > /proc/sys/vm/watermark_scale_factor
 
     configure_zram_parameters
 
@@ -2511,26 +2520,13 @@ case "$target" in
             echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 
             # Start cdsprpcd only for sdm660 and disable for sdm630
-            #start vendor.cdsprpcd
+            #start vendor.cdsprpcd disable sdm636 for M1 by yukai@AMT
 
-            # Start Host based Touch processing
-                case "$hw_platform" in
-                        "MTP" | "Surf" | "RCM" | "QRD" )
-                        start_hbtp
-                        ;;
-                esac
             ;;
         esac
         #Apply settings for sdm630 and Tahaa
         case "$soc_id" in
             "318" | "327" | "385" )
-
-            # Start Host based Touch processing
-            case "$hw_platform" in
-                "MTP" | "Surf" | "RCM" | "QRD" )
-                start_hbtp
-                ;;
-            esac
 
             # Setting b.L scheduler parameters
             echo 85 > /proc/sys/kernel/sched_upmigrate

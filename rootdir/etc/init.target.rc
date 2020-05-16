@@ -66,9 +66,6 @@ on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
-    # set RLIMIT_MEMLOCK to 64MB
-    setrlimit 8 67108864 67108864
-
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
@@ -90,33 +87,35 @@ on boot
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
 
-#Huaqin add for sensors permission-ZQL1650-141 by chenyijun5 at 2018/2/1 start
+#add for als/ps permission by wildbook at 2019/09/03 start
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_delay
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_flush
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_name
     chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable
     chown system system /sys/class/sensors/stk3x1x-proximity/sensors_delay
     chown system system /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
     chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
     chown system system /sys/class/sensors/stk3x1x-proximity/sensors_flush
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_name
 
     chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable
     chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_delay
     chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_calibrate
     chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
     chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_flush
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_name
     chown system system /sys/class/sensors/stk3x1x-light/sensors_enable
     chown system system /sys/class/sensors/stk3x1x-light/sensors_delay
     chown system system /sys/class/sensors/stk3x1x-light/sensors_calibrate
     chown system system /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
     chown system system /sys/class/sensors/stk3x1x-light/sensors_flush
-#Huaqin add for sensors permission-ZQL1650-141 by chenyijun5 at 2018/2/1 end
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_name
 
-#Huaqin add or ZQL1650-1072 by zhuqiang at 2018/04/23 start
     chown radio radio sys/module/stk3x1x/parameters/call_status_flag
-#Huaqin add for ZQL1650-1072 by zhuqiang at 2018/04/23 end
+    #add for als/ps permission by wildbook at 2019/09/03 end
 
 #Load WLAN driver
    chown wifi wifi /sys/module/wlan/parameters/fwpath
@@ -126,6 +125,7 @@ on boot
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
+    setprop vendor.usb.qdss.inst.name "qdss"
     write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
     setprop sys.usb.configfs 1
 
