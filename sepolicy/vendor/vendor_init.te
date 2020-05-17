@@ -18,3 +18,22 @@ allow vendor_init system_data_file:lnk_file create;
 
 # Allow vendor_init to set persist_camera_prop
 set_prop(vendor_init, persist_camera_prop)
+
+allow vendor_init rootfs:dir { add_name create setattr write };
+allow vendor_init nfc_data_file:dir { search setattr };
+allow vendor_init wpa_socket:dir setattr;
+allow vendor_init rootfs:lnk_file setattr;
+allow vendor_init media_rw_data_file:file getattr;
+allow vendor_init media_rw_data_file:file { relabelfrom } ;
+allow vendor_init block_device:lnk_file setattr;
+allow vendor_init unlabeled:file write;
+set_prop(vendor_init, radio_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, audio_prop)
+set_prop(vendor_init, bservice_prop)
+set_prop(vendor_init, persist_debug_prop)
+set_prop(vendor_init, overlay_prop)
+set_prop(vendor_init, qcom_ims_prop)
+set_prop(vendor_init, persist_dpm_prop)
+set_prop(vendor_init, mm_parser_prop)
+set_prop(vendor_init, default_prop)
