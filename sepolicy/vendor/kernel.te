@@ -1,0 +1,13 @@
+#bat_health
+allow kernel mnt_user_file:dir search;
+allow kernel mnt_user_file:lnk_file read;
+allow kernel sdcardfs:dir { read write add_name search open };
+allow kernel sdcardfs:file { read create open };
+allow kernel storage_file:dir search;
+allow kernel storage_file:lnk_file read;
+allow kernel tmpfs:dir search;
+
+allow kernel init:process noatsecure;
+allow kernel vfat:file open;
+allow kernel vfat:dir { search };
+allow kernel kernel:system { module_request };

@@ -2,5 +2,10 @@ typeattribute hal_camera_default data_between_core_and_vendor_violators;
 
 allow hal_camera_default camera_data_file:dir w_dir_perms;
 allow hal_camera_default camera_data_file:file create_file_perms;
+allow hal_camera_default sysfs:file { getattr open read };
+allow hal_camera_default sysfs_kgsl:file { getattr open read };
+allow hal_camera_default self:socket { read write };
 
 set_prop(hal_camera_default, vendor_camera_prop)
+get_prop(hal_camera_default, vendor_system_prop)
+binder_call(hal_camera_default, hal_graphics_allocator_default)

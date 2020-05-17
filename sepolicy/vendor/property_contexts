@@ -1,4 +1,18 @@
 persist.cdfinger.ready             u:object_r:cdfinger_prop:s0
 property.cdfinger.enablesave       u:object_r:cdfinger_prop:s0
 persist.vendor.runin.fp            u:object_r:cdfinger_prop:s0
+persist.camera.                    u:object_r:camera_prop:s0
 persist.vendor.camera.             u:object_r:vendor_camera_prop:s0
+gsm.version.baseband               u:object_r:baseband_prop:s0
+
+# meh this should have been covered already?
+qemu.hw.mainkeys                              u:object_r:vendor_cfg_prop:s0
+
+# nvram
+ro.btmac                           u:object_r:nvram_btwifi_prop:s0
+ro.wifimac                         u:object_r:nvram_btwifi_prop:s0
+sys.nvram.btmac                    u:object_r:nvram_btwifi_prop:s0
+sys.nvram.wifimac                  u:object_r:nvram_btwifi_prop:s0
+
+# MPCTL
+sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0

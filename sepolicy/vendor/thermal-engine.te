@@ -1,0 +1,8 @@
+# to read /sys/devices
+allow thermal-engine sysfs:dir r_dir_perms;
+
+get_prop(thermal-engine, default_prop)
+get_prop(thermal-engine, system_prop)
+set_prop(thermal-engine, system_prop)
+allow thermal-engine init:unix_stream_socket connectto;
+allow thermal-engine property_socket:sock_file write;

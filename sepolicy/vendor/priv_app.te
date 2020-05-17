@@ -1,0 +1,10 @@
+dontaudit priv_app { firmware_file bt_firmware_file }:filesystem getattr;
+allow priv_app bt_firmware_file:filesystem { getattr };
+allow priv_app firmware_file:filesystem { getattr };
+allow priv_app sysfs_android_usb:file { open };
+allow priv_app device:chr_file { ioctl };
+allow priv_app tmpfs:chr_file rw_file_perms;
+allow priv_app system_data_file:file { open };
+allow priv_app sysfs_kgsl:lnk_file read;
+allow priv_app baseband_prop:file read;
+get_prop(priv_app, baseband_prop)
