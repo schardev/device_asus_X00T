@@ -1,8 +1,5 @@
-# Goodix Fingerprint
-/dev/goodix_fp                                                          u:object_r:fingerprintd_device:s0
-
 # Keylayout
-/(vendor|system/vendor)/usr/keylayout(/.*)?                             u:object_r:keylayout_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?                             u:object_r:vendor_keylayout_file:s0
 
 # Sensors
 /sys/devices/virtual/input/input[0-9]+/stk3x1x-proximity(/.*)?          u:object_r:sysfs_sensors:s0
@@ -11,14 +8,29 @@
 # NFC
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.nxpnfc@1\.0-service         u:object_r:nxpnfc_hal_svc_exec:s0
 
-# cdfinger Fingerprint
+# Fingerprint
 /dev/fpsdev0                                                            u:object_r:cdfinger_device:s0
+/dev/goodix_fp                                                          u:object_r:fingerprintd_device:s0
 /data/system/cdfinger(/.*)?                                             u:object_r:cdfinger_data_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-X00T u:object_r:hal_fingerprint_default_exec:s0
+
+# Lights
+/sys/class/leds(/.*)?								u:object_r:sysfs_leds:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.asus_X00T    u:object_r:hal_light_default_exec:s0
 
 # blutmac script
 /(vendor|system/vendor)/bin/init\.btmac\.sh                             u:object_r:init_blutmac_exec:s0
 /(vendor|system/vendor|system)/bin/nvram_btwifi                                u:object_r:nvram_btwifi_exec:s0
 
-/sys/module/usb_f_qcrndis/parameters(/.*)?         u:object_r:sysfs_usb_rndis:s0
+# USB HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.X00T      u:object_r:hal_usb_default_exec:s0
 
+# Lineage Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.X00T                    u:object_r:hal_lineage_touch_default_exec:s0
+
+# Gestures
+/sys/kernel/touchpanel/dclicknode                                       u:object_r:sysfs:s0
+/sys/kernel/touchpanel/gesture_node                                           u:object_r:sysfs:s0
+
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service.widevine    u:object_r:hal_drm_widevine_exec:s0
