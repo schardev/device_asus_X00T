@@ -142,6 +142,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5 \
     vendor.qti.hardware.camera.device@1.0 \
     libxml2 \
+    libgui_vendor \
     Snap
 
 # Connectivity Engine support (CNE)
@@ -215,6 +216,7 @@ PRODUCT_PACKAGES += \
 # fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
+    libvndfwk_detect_jni.qti \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
 
