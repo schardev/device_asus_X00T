@@ -1,3 +1,1 @@
-allow fsck mnt_vendor_file:dir { getattr };
 allow fsck tmpfs:blk_file { getattr };
-allow fsck block_device:blk_file { getattr read open write ioctl };
