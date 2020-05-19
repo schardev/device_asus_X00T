@@ -75,8 +75,8 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.2::ICryptoFactory/clearkey</fqname>
-        <fqname>@1.2::IDrmFactory/clearkey</fqname>
         <fqname>@1.2::ICryptoFactory/widevine</fqname>
+        <fqname>@1.2::IDrmFactory/clearkey</fqname>
         <fqname>@1.2::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl">
@@ -201,13 +201,13 @@
         <fqname>@1.4::IRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
-       <name>android.hardware.radio.config</name>
-       <transport>hwbinder</transport>
-       <version>1.2</version>
-       <interface>
-           <name>IRadioConfig</name>
-           <instance>default</instance>
-       </interface>
+        <name>android.hardware.radio.config</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>IRadioConfig</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
@@ -401,7 +401,6 @@
             <name>IDms</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::IDms/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.goodix.hardware.fingerprint</name>
@@ -409,6 +408,15 @@
         <version>1.0</version>
         <interface>
             <name>IGoodixBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.touch</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITouchscreenGesture</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -467,6 +475,24 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.bluetooth_sar</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothSar</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.btconfigstore</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBTConfigStore</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.cryptfshw</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -486,22 +512,14 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.bluetooth_sar</name>
+        <name>vendor.qti.hardware.data.iwlan</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IBluetoothSar</name>
-            <instance>default</instance>
-	</interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.btconfigstore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IBTConfigStore</name>
-            <instance>default</instance>
-	</interface>
+            <name>IIWlan</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.data.latency</name>
@@ -529,16 +547,6 @@
             <name>IFmHci</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.data.iwlan</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IIWlan</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface> 
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
@@ -680,14 +688,14 @@
         </interface>
     </hal>
     <hal format="hidl">
-       <name>vendor.qti.ims.callinfo</name>
-       <transport>hwbinder</transport>
-       <version>1.0</version>
-      <interface>
-         <name>IService</name>
-         <instance>default</instance>
-       </interface>
-   </hal>
+        <name>vendor.qti.ims.callinfo</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
@@ -695,15 +703,6 @@
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.lineage.touch</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITouchscreenGesture</name>
-            <instance>default</instance>
         </interface>
     </hal>
 </manifest>
