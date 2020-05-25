@@ -824,7 +824,7 @@ service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.andro
     oneshot
     keycodes 114 115 116
 
-service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
     override
     class hal
     user system
