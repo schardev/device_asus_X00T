@@ -31,6 +31,3 @@ persist.sys.theme.gradientcolor                   u:object_r:theme_prop:s0
 
 # wifi
 wifi.active.interface              u:object_r:wifi_prop:s0
-
-# Dolby
-persist.vendor.dolby.loglevel                 u:object_r:vendor_dolby_loglevel_prop:s0
