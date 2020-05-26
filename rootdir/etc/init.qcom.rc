@@ -103,8 +103,8 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
-    chown system system /dev/input/event4  # stk3x3x-light
-    chown system system /dev/input/event5  # stk3x3x-proximity
+    chown system system /dev/input/event5  # stk3x3x-light
+    chown system system /dev/input/event6  # stk3x3x-proximity
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
