@@ -404,6 +404,7 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
+    init.zenparts.sh \
     move_time_data.sh \
     move_wifi_data.sh \
     fix_baseband.sh \
@@ -412,6 +413,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
+    init.zenparts.rc \
     ueventd.qcom.rc
 
 # RenderScript HAL
