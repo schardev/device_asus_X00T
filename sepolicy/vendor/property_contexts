@@ -31,3 +31,7 @@ persist.sys.theme.gradientcolor                   u:object_r:theme_prop:s0
 
 # wifi
 wifi.active.interface              u:object_r:wifi_prop:s0
+
+# GPU/CPU Boosts
+persist.zenparts.gpu_profile           u:object_r:boosts_prop:s0
+persist.zenparts.cpu_profile           u:object_r:boosts_prop:s0

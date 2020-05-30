@@ -48,7 +48,73 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3 
 
-    # Run zenparts script
+# GPU/CPU Boost based on ronax's MayhemParts
+
+    chown system system /sys/devices/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+    chmod 0644 /sys/devices/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+
+    chown system system /sys/module/cpu_boost/parameters/input_boost_enabled
+    chown system system /sys/module/cpu_boost/parameters/input_boost_freq
+    chown system system /sys/module/cpu_boost/parameters/input_boost_ms
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_enabled
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_ms
+
+    # Enable {cpu, gpu}boost support
+    setprop gpuboost.support 1
+    setprop cpuboost.support 1
+
+    # Run zenparts script to initialize boost props
     exec u:r:init:s0 root root -- /vendor/bin/init.zenparts.sh
     exec u:r:su:s0 root root -- /vendor/bin/init.zenparts.sh
 
+# GPU-Disable (default profile)
+on property:persist.zenparts.gpu_profile=0
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "10000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "35"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "25"
+
+# GPU-Low
+on property:persist.zenparts.gpu_profile=1
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "6000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "25"
+
+# GPU-Medium
+on property:persist.zenparts.gpu_profile=2
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "5000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "15"
+
+# GPU-High
+on property:persist.zenparts.gpu_profile=3
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "N"
+
+# CPU-Disable (default profile)
+on property:persist.zenparts.cpu_profile=0
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 0
+
+# CPU-Low
+on property:persist.zenparts.cpu_profile=1
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1113600 1:1113600 2:1113600 3:1113600 4:1113600 5:1113600 6:1113600 7:1113600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 400
+
+# CPU-Medium
+on property:persist.zenparts.cpu_profile=2
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1401600 1:1401600 2:1401600 3:1401600 4:1401600 5:1401600 6:1401600 7:1401600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 700
+
+# CPU-High
+on property:persist.zenparts.cpu_profile=3
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1612800 1:1612800 2:1612800 3:1612800 4:1747200 5:1747200 6:1747200 7:1747200"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 1000
