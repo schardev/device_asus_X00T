@@ -34,19 +34,22 @@ public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     final static String PREF_TORCH_BRIGHTNESS = "torch_brightness";
-    private final static String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
+    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
             "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
-    private final static String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
+    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
             "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
-    private static final String CATEGORY_DISPLAY = "display";
-    private static final String PREF_DEVICE_KCAL = "device_kcal";
 
-    final static String PREF_HEADPHONE_GAIN = "headphone_gain";
-    private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
-    final static String PREF_MICROPHONE_GAIN = "microphone_gain";
-    private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
+    public static final String CATEGORY_DISPLAY = "display";
+    public static final String PREF_DEVICE_KCAL = "device_kcal";
+
+    public static final String PREF_HEADPHONE_GAIN = "headphone_gain";
+    public static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
+
+    public static final String PREF_MICROPHONE_GAIN = "microphone_gain";
+    public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
+
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
 
