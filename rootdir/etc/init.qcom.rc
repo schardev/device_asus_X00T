@@ -426,27 +426,6 @@ on post-fs-data
     start vendor.dataqti
     start vendor.dataadpl
     
-# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 start
-service nvram_btwifi /system/bin/nvram_btwifi
-    user root
-    group system oem_2901
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
-    start nvram_btwifi
-
-on property:sys.nvram.btmac=*
-    start vendor-btmac-sh
-    restart vendor.bluetooth-1-0-qti
-# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 end
-
-service vendor-btmac-sh  /vendor/bin/init.btmac.sh
-    class core
-    user root
-    oneshot
-    disabled
-
 service vendor.ssr_setup /vendor/bin/ssr_setup
     oneshot
     disabled
