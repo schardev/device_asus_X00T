@@ -2,13 +2,9 @@ allow init firmware_file:filesystem getattr;
 allow init bt_firmware_file:filesystem getattr;
 allow init sysfs_battery_supply:file { open write };
 
-allow init nvram_btwifi:process { rlimitinh siginh transition };
-allow init nvram_btwifi_exec:file { read getattr execute map open };
-
 allow init sysfs_mmc_host:file { setattr w_file_perms };
 allow init proc_swappiness:file w_file_perms;
 
-dontaudit init nvram_btwifi:process noatsecure;
 dontaudit init domain:process noatsecure;
 allow init hwservicemanager:binder { call transfer };
 allow init cameraserver:process noatsecure;

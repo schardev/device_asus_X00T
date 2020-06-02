@@ -16,12 +16,6 @@ vendor.debug.camera.prop_bokeh         u:object_r:vendor_camera_prop:s0
 vendor.debug.camera.prop_hdr           u:object_r:vendor_camera_prop:s0
 vendor.debug.camera.prop_dis           u:object_r:vendor_camera_prop:s0
 
-# nvram
-ro.btmac                           u:object_r:nvram_btwifi_prop:s0
-ro.wifimac                         u:object_r:nvram_btwifi_prop:s0
-sys.nvram.btmac                    u:object_r:nvram_btwifi_prop:s0
-sys.nvram.wifimac                  u:object_r:nvram_btwifi_prop:s0
-
 # MPCTL
 sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
 
