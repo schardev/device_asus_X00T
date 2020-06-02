@@ -201,9 +201,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Treble
 BOARD_VNDK_VERSION := current
 
-# SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
