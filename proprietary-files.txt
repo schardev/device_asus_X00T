@@ -1462,12 +1462,16 @@ vendor/bin/wifidisplayhalservice
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+vendor/lib/libmiracast.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdhaldsmanager.so
 vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+vendor/lib64/libmiracast.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
+vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
