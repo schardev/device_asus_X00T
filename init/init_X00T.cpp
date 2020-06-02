@@ -130,9 +130,9 @@ static void init_alarm_boot_properties()
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
         if (Trim(boot_reason) == "3" || reboot_reason == "true")
-            property_set("ro.alarm_boot", "true");
+            property_set("ro.vendor.alarm_boot", "true");
         else
-            property_set("ro.alarm_boot", "false");
+            property_set("ro.vendor.alarm_boot", "false");
     }
 }
 
