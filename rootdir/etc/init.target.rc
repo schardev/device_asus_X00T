@@ -209,9 +209,6 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-on property:sys.boot_completed=1
-    swapon_all /vendor/etc/fstab.qcom
-
 on charger
     load_system_props
     start qcom-post-boot
