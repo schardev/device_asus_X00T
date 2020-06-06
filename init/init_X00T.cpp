@@ -31,6 +31,7 @@
  */
 
 #include <cstdio>
+#include <fstream>
 
 #include <android-base/file.h>
 #include <android-base/properties.h>
@@ -184,9 +185,23 @@ void vendor_check_variant()
     property_override_dual("ro.product.vendor.device", "ro.vendor.product.name", product_name);
 }
 
+void NFC_check()
+{
+    // Check NFC
+    std::ifstream infile("/proc/NFC_CHECK");
+    std::string check;
+
+    getline(infile, check);
+    if (!check.compare("SUPPORTED"))
+        property_override("ro.hq.support.nfc", "1");
+    else
+        property_override("ro.hq.support.nfc", "0");
+}
+
 void vendor_load_properties()
 {
     init_alarm_boot_properties();
+    NFC_check();
     vendor_check_variant();
     dalvik_properties();
 }
