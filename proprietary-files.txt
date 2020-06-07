@@ -66,7 +66,6 @@ vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libicepower.so
 vendor/lib/soundfx/libbundlewrapper.so
 vendor/lib/soundfx/libreverbwrapper.so
 vendor/lib/soundfx/libvisualizer.so
