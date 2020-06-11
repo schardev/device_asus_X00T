@@ -1,3 +1,4 @@
 # Blocker
 allow toolbox init:fifo_file write;
 allow toolbox proc_version:file { open read };
+allow toolbox boosts_prop:file { open read };
