@@ -8,11 +8,6 @@
 # Non-A/B fstab.qcom variant
 #<src>                                   <mnt_point>            <type> <mnt_flags and options>                                                                          <fs_mgr_flags>
 
-/dev/block/bootdevice/by-name/boot       /boot                  emmc   defaults                                                                                         defaults
-/dev/block/bootdevice/by-name/recovery   /recovery              emmc   defaults                                                                                         defaults
-/dev/block/bootdevice/by-name/system     /system                ext4   ro                                                                                               wait,recoveryonly
-/dev/block/bootdevice/by-name/vendor     /vendor                ext4   ro                                                                                               wait,recoveryonly
-/dev/block/bootdevice/by-name/persist    /persist               ext4   nosuid,nodev                                                                                     wait,recoveryonly
 /dev/block/bootdevice/by-name/userdata   /data                  f2fs   nosuid,nodev,discard,noatime,lazytime,background_gc=sync,fsync_mode=nobarrier                    wait,check,encryptable=footer,quota,reservedsize=128M
 /dev/block/bootdevice/by-name/userdata   /data                  ext4   nosuid,nodev,noauto_da_alloc,discard,noatime,lazytime                                            wait,check,encryptable=footer,quota,reservedsize=128M
 /devices/soc/c084000.sdhci/mmc_host*     auto                   auto   defaults                                                                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
@@ -24,3 +19,10 @@
 /dev/block/bootdevice/by-name/cache      /cache                 f2fs   nosuid,nodev,noatime,inline_xattr,flush_merge,data_flush                                         wait
 /dev/block/bootdevice/by-name/cache      /cache                 ext4   nosuid,nodev,noatime                                                                             wait
 /dev/block/bootdevice/by-name/persist    /mnt/vendor/persist    ext4   noatime,nosuid,nodev                                                                             wait
+
+# This has been added to satisfy the build system
+/dev/block/bootdevice/by-name/boot       /boot                  emmc   defaults                                                                                         defaults
+/dev/block/bootdevice/by-name/recovery   /recovery              emmc   defaults                                                                                         defaults
+/dev/block/bootdevice/by-name/system     /system                ext4   ro                                                                                               wait,recoveryonly
+/dev/block/bootdevice/by-name/vendor     /vendor                ext4   ro                                                                                               wait,recoveryonly
+/dev/block/bootdevice/by-name/persist    /persist               ext4   nosuid,nodev                                                                                     wait,recoveryonly
