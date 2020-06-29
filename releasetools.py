@@ -42,16 +42,7 @@ abort("Error: This package requires firmware version ' + version_firmware + \
   return
 
 def FullOTA_InstallEnd(info):
-  info.script.AppendExtra('ifelse(is_mounted("/system_root"), unmount("/system_root"));');
-  info.script.AppendExtra('ifelse(is_mounted("/vendor"), unmount("/vendor"));');
-  info.script.AppendExtra('ifelse(is_mounted("/persist"), unmount("/persist"));');
-  info.script.Mount("/system_root")
-  info.script.Mount("/vendor")
-  info.script.Mount("/persist")
-  RunCustomScript(info, "device_check.sh", "")
-  info.script.Unmount("/system_root")
-  info.script.Unmount("/vendor")
-  info.script.Unmount("/persist")
+  RunCustomScript(info, "goodix.sh", "")
   return
 
 def RunCustomScript(info, name, arg):
