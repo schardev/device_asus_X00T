@@ -65,13 +65,6 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
     property_override(vendor_prop, value);
 }
 
-void property_override_triple(char const system_prop[], char const vendor_prop[], char const bootimg_prop[], char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-    property_override(bootimg_prop, value);
-}
-
 void dalvik_properties()
 {
     struct sysinfo sys;
@@ -159,12 +152,10 @@ void vendor_check_variant()
     if (sys.totalram > 4096ull * 1024 * 1024) {
         // Russian model
         if (region == "RU") {
-            //build_fingerprint = "asus/RU_X00TD/ASUS_X00T_9:9/PKQ1/16.2017.1903.050-20190401:user/release-keys";
             product_device = "ASUS_X00T_9";
 
         // Global model
         } else {
-            //build_fingerprint = "asus/WW_X00TD/ASUS_X00T_3:9/PKQ1/16.2017.1903.050-20190401:user/release-keys";
             product_device = "ASUS_X00T_3";
         }
 
@@ -172,12 +163,10 @@ void vendor_check_variant()
     } else {
         // Russian model
         if (region == "RU") {
-            //build_fingerprint = "asus/RU_X00TD/ASUS_X00T_6:9/PKQ1/16.2017.1903.050-20190401:user/release-keys";
             product_device = "ASUS_X00T_6";
 
         // Global model
         } else {
-            //build_fingerprint = "asus/WW_X00TD/ASUS_X00T_2:9/PKQ1/16.2017.1903.050-20190401:user/release-keys";
             product_device = "ASUS_X00T_2";
         }
     }
@@ -195,10 +184,6 @@ void vendor_check_variant()
     property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
     property_override_dual("ro.product.model", "ro.vendor.product.model", product_model);
     property_override_dual("ro.product.vendor.device", "ro.vendor.product.name", product_name);
-    //property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", build_fingerprint);
-
-    // Set region code via ro.config.versatility prop
-    property_set("ro.config.versatility", region);
 }
 
 void vendor_load_properties()
