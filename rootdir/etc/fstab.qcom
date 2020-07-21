@@ -24,5 +24,6 @@
 /dev/block/bootdevice/by-name/boot       /boot                  emmc   defaults                                                                                         defaults
 /dev/block/bootdevice/by-name/recovery   /recovery              emmc   defaults                                                                                         defaults
 /dev/block/bootdevice/by-name/system     /system                ext4   ro                                                                                               wait,recoveryonly
+/dev/block/bootdevice/by-name/system     /system_root           ext4   ro                                                                                               wait,recoveryonly
 /dev/block/bootdevice/by-name/vendor     /vendor                ext4   ro                                                                                               wait,recoveryonly
 /dev/block/bootdevice/by-name/persist    /persist               ext4   nosuid,nodev                                                                                     wait,recoveryonly

@@ -20,12 +20,12 @@ if grep -q -w NFC /dev/block/platform/soc/c0c4000.sdhci/by-name/version; then
 else
     echo "Device doesn't support NFC , removing ..."
     # Remove NFC
-    rm -rf /system/system/app/*Nfc*
-    rm -rf /system/system/etc/permissions/*nfc*
-    rm -rf /system/system/framework/*nfc*
-    rm -rf /system/system/lib/*nfc*
-    rm -rf /system/system/lib64/*nfc*
-    rm -rf /system/system/priv-app/Tag
+    rm -rf /system_root/system/app/*Nfc*
+    rm -rf /system_root/system/etc/permissions/*nfc*
+    rm -rf /system_root/system/framework/*nfc*
+    rm -rf /system_root/system/lib/*nfc*
+    rm -rf /system_root/system/lib64/*nfc*
+    rm -rf /system_root/system/priv-app/Tag
     rm -rf /vendor/app/SmartcardService
     rm -rf /vendor/bin/*nfc*
     rm -rf /vendor/bin/hw/*nfc*
