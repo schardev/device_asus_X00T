@@ -113,7 +113,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=true
+    persist.vendor.cne.feature=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
