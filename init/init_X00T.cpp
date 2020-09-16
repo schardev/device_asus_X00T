@@ -40,13 +40,12 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
-using android::init::property_set;
+using android::base::SetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -72,31 +71,31 @@ void dalvik_properties()
     sysinfo(&sys);
     if (sys.totalram > 4096ull * 1024 * 1024) {
         // Set for 6GB or more RAM
-        property_set("dalvik.vm.heapstartsize", "16m");
-        property_set("dalvik.vm.heapgrowthlimit", "256m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.5");
-        property_set("dalvik.vm.heapmaxfree", "32m");
-        property_set("dalvik.vm.heapminfree", "8m");
-        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "48");
+        SetProperty("dalvik.vm.heapstartsize", "16m");
+        SetProperty("dalvik.vm.heapgrowthlimit", "256m");
+        SetProperty("dalvik.vm.heapsize", "512m");
+        SetProperty("dalvik.vm.heaptargetutilization", "0.5");
+        SetProperty("dalvik.vm.heapmaxfree", "32m");
+        SetProperty("dalvik.vm.heapminfree", "8m");
+        SetProperty("ro.vendor.qti.sys.fw.bg_apps_limit", "48");
     } else if (sys.totalram > 3072ull * 1024 * 1024) {
         // Set for 4GB RAM
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.6");
-        property_set("dalvik.vm.heapmaxfree", "16m");
-        property_set("dalvik.vm.heapminfree", "8m");
-        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "36");
+        SetProperty("dalvik.vm.heapstartsize", "8m");
+        SetProperty("dalvik.vm.heapgrowthlimit", "192m");
+        SetProperty("dalvik.vm.heapsize", "512m");
+        SetProperty("dalvik.vm.heaptargetutilization", "0.6");
+        SetProperty("dalvik.vm.heapmaxfree", "16m");
+        SetProperty("dalvik.vm.heapminfree", "8m");
+        SetProperty("ro.vendor.qti.sys.fw.bg_apps_limit", "36");
     } else {
         // Set for 2/3GB RAM
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapmaxfree", "8m");
-        property_set("dalvik.vm.heapminfree", "512k");
-        property_set("ro.vendor.qti.sys.fw.bg_apps_limit", "24");
+        SetProperty("dalvik.vm.heapstartsize", "8m");
+        SetProperty("dalvik.vm.heapgrowthlimit", "192m");
+        SetProperty("dalvik.vm.heapsize", "512m");
+        SetProperty("dalvik.vm.heaptargetutilization", "0.75");
+        SetProperty("dalvik.vm.heapmaxfree", "8m");
+        SetProperty("dalvik.vm.heapminfree", "512k");
+        SetProperty("ro.vendor.qti.sys.fw.bg_apps_limit", "24");
   }
 }
 
@@ -123,9 +122,9 @@ static void init_alarm_boot_properties()
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
         if (Trim(boot_reason) == "3" || reboot_reason == "true")
-            property_set("ro.vendor.alarm_boot", "true");
+            SetProperty("ro.vendor.alarm_boot", "true");
         else
-            property_set("ro.vendor.alarm_boot", "false");
+            SetProperty("ro.vendor.alarm_boot", "false");
     }
 }
 
