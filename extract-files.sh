@@ -62,6 +62,10 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    product/lib64/libdpmframework.so)
+        patchelf --add-needed "libshim_dpmframework.so" "${2}"
+        ;;
+
     vendor/lib64/libril-qc-hal-qmi.so)
         patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
