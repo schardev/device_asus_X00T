@@ -124,6 +124,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Disable skip validate
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.display.disable_skip_validate=1
+
 # Enable stm-events
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.coresight.config=stm-events
