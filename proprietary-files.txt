@@ -785,10 +785,6 @@ product/lib64/vendor.display.color@1.0.so
 product/lib64/vendor.display.color@1.1.so
 product/lib64/vendor.display.color@1.2.so
 product/lib64/vendor.display.postproc@1.0.so
-product/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Display calibration - from Stock Pie
 vendor/etc/qdcm_calib_data_nt36672_1080p_video_mode_dsi_panel.xml|b89bc9525be1f3948068f607dde7178ce683c7f5
