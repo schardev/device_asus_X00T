@@ -63,35 +63,35 @@ function blob_fixup() {
     case "${1}" in
 
     lib64/libwfdnative.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
     lib64/libfm-hci.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
     product/lib64/libdpmframework.so)
-        patchelf --add-needed "libshim_dpmframework.so" "${2}"
+        "${PATCHELF}" --add-needed "libshim_dpmframework.so" "${2}"
         ;;
 
     vendor/lib/hw/camera.sdm660.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
     vendor/lib64/libril-qc-hal-qmi.so)
-        patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
 
     vendor/lib64/libsettings.so)
-        patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
 
     vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-        patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
 
     vendor/lib64/libwvhidl.so)
-        patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
 
     esac
