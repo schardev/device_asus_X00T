@@ -96,8 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.service.bdroid.sibs=false
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
