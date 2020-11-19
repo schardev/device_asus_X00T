@@ -14,9 +14,3 @@
 
 soong_namespace {
 }
-
-subdirs = [
-    "light",
-    "biometrics",
-    "usb",
-]
