@@ -514,9 +514,6 @@
     <!-- Telephony qualified networks service package name to bind to by default. -->
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
-    <!-- Lawnstep -->
-    <string name="config_recentsComponentName" translatable="false">ch.deletescape.lawnchair.ci/com.android.quickstep.RecentsActivity</string>
-
     <!-- If true, the camera will be used more often. -->
     <bool name="config_adaptive_sleep_available">false</bool>
 
