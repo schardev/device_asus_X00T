@@ -22,9 +22,6 @@
 /sys/class/leds(/.*)?								u:object_r:sysfs_leds:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.asus_X00T    u:object_r:hal_light_default_exec:s0
 
-# USB HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.X00T      u:object_r:hal_usb_default_exec:s0
-
 # Lineage Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.X00T                    u:object_r:hal_lineage_touch_default_exec:s0
 
