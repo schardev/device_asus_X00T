@@ -5,6 +5,7 @@ type keylayout_file, file_type, vendor_file_type;
 # sysfs
 type sysfs_touchpanel, sysfs_type, fs_type;
 type sysfs_usb_rndis, sysfs_type, fs_type;
+type kcal_dev, sysfs_type, fs_type;
 
 # Gesture
 type sysfs_dclicknode, sysfs_type, fs_type;

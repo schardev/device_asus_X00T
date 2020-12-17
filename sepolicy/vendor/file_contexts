@@ -18,6 +18,10 @@
 /data/system/cdfinger(/.*)?                                             u:object_r:cdfinger_data_file:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.2-service-X00T u:object_r:hal_fingerprint_default_exec:s0
 
+# Kcal
+/sys/devices/platform/kcal_ctrl\.0(/.*)?                                 u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?                               u:object_r:kcal_dev:s0
+
 # Lights
 /sys/class/leds(/.*)?								u:object_r:sysfs_leds:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.asus_X00T    u:object_r:hal_light_default_exec:s0
