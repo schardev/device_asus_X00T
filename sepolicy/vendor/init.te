@@ -7,16 +7,9 @@ allow init proc_swappiness:file w_file_perms;
 
 dontaudit init domain:process noatsecure;
 allow init hwservicemanager:binder { call transfer };
-allow init cameraserver:process noatsecure;
 allow init fingerprintd_device:chr_file setattr;
-allow init hal_camera_default:process noatsecure;
-allow init cameraserver:process noatsecure;
-allow init audioserver:process noatsecure;
-allow init hal_audio_default:process noatsecure;
 allow init hidl_base_hwservice:hwservice_manager add;
-allow init vendor_init:process noatsecure;
 allow init vendor_file:file execute;
-allow init rmt_storage:process noatsecure;
 allow init sysfs_leds:lnk_file { read };
 allow init system_file:file { mounton };
 allow init sysfs_wake_lock:file { read open write };
