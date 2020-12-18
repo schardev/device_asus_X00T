@@ -906,8 +906,6 @@ vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # FM
-lib/fm_helium.so
-lib/libfm-hci.so
 lib64/fm_helium.so
 lib64/libfm-hci.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -1403,14 +1401,12 @@ lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib/libmmrtpdecoder.so
 lib/libmmrtpencoder.so
 lib/libwfdavenhancements.so
-lib/libwfdclient.so
 lib/libwfdcodecv4l2.so
 lib/libwfdcommonutils.so
 lib/libwfdconfigutils.so
 lib/libwfdmminterface.so
 lib/libwfdmmsink.so
 lib/libwfdmmsrc.so
-lib/libwfdnative.so
 lib/libwfdrtsp.so
 lib/libwfdservice.so
 lib/libwfdsm.so
