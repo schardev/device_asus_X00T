@@ -70,6 +70,14 @@ function blob_fixup() {
         "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml)
+        sed -i 's/version="2.0"/version="1.0"/' "${2}"
+        ;;
+
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+        sed -i 's/version="2.0"/version="1.0"/' "${2}"
+        ;;
+
     product/lib64/libdpmframework.so)
         "${PATCHELF}" --add-needed "libshim_dpmframework.so" "${2}"
         ;;
