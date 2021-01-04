@@ -737,9 +737,6 @@ service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-servi
 on property:vendor.opengles.version=*
     setprop ro.opengles.version ${vendor.opengles.version}
 
-on property:apexd.status=ready
-    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
-
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
