@@ -486,9 +486,6 @@
 
     <!-- Set default animations to half -->
     <item name="config_appTransitionAnimationDurationScaleDefault" format="float" type="dimen">0.5</item>
-	
-    <!-- Flashlight on power button -->
-    <integer name="config_flashlightProximityTimeout">-1</integer>
 
     <!-- Define that we use a higher screen ratio (18:9) than standard (16:9) -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
