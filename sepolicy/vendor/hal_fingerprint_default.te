@@ -13,6 +13,7 @@ allow hal_fingerprint_default fingerprintd_device:chr_file rw_file_perms;
 allow hal_fingerprint_default goodix_fingerprint_vndservice:service_manager add;
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default hal_perf_hwservice:hwservice_manager find;
 
 # access to /data/system/users/[0-9]+/fpdata
 allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
