@@ -1,2 +1,2 @@
-allow bluetooth fm_prop:file { read } ;
+allow bluetooth vendor_fm_prop:file { read } ;
 get_prop(bluetooth, hal_audio_prop)
