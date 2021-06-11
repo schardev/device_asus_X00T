@@ -1027,15 +1027,11 @@ vendor/lib64/libhdr_tm.so
 
 # Graphics (SDM)
 vendor/lib/libqseed3.so
-vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
-vendor/lib/libsdmextension.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib64/libqseed3.so
-vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
 # Graphics (Vulkan)
@@ -1445,4 +1441,11 @@ vendor/lib/libwfdmmservice.so|8dbc75863971df4eadf99114354cfc0a7987758c
 vendor/lib/libwfdmodulehdcpsession.so|bed1f85a71330dd04a9ce5aba4ed40b15fc0f3f2
 vendor/lib64/libmmosal.so|b4de8a81ac6e600bfa2e15f9bee20c6ac30e2d89
 vendor/lib64/libwfdhdcpcp.so|a9f56d29d9243272ca73d564977022d3aef3b8e4
+
+
+# Graphics (SDM) - from LA.UM.8.2.r1-07500-sdm660.0
+vendor/lib/libsdm-color.so|05e6eedb8f9656d9097a1c3cee09ceeef1025181
+vendor/lib/libsdmextension.so|ebc3f1aed53d208ccc665a173198adb9e0ed6a79
+vendor/lib64/libsdm-color.so|9c80ac4e059bff1c53814e9f5f71a5fbe38bce40
+vendor/lib64/libsdmextension.so|913503f002aa2afbeca90d429bac4bff4a2266e0
 
