@@ -169,16 +169,19 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-
-PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-service \        
     vendor.display.config@1.9 \
+    vendor.display.config@1.9_vendor 
+    
+    PRODUCT_PACKAGES += \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     copybit.sdm660 \
     gralloc.sdm660 \
     hwcomposer.sdm660 \
     libdisplayconfig \
     libqdMetaData \
-    libqdMetaData.system \
+    libqdMetaData.vendor \
     libvulkan \
     libtinyxml \
     memtrack.sdm660 \
@@ -485,7 +488,8 @@ PRODUCT_COPY_FILES += \
 # WFD
 PRODUCT_PACKAGES += \
     libnl \
-    libaacwrapper
+    libaacwrapper \
+    libstagefright_enc_common
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
